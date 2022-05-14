@@ -39,20 +39,20 @@
             {{ "accessibility.skip_to_product_info" | t }}
           </a>
           <div id="GalleryViewer-{{ section.id }}" class="product__media-list">
-            {%- if product.selected_or_first_available_variant.featured_media != null -%}
-              {%- assign media = product.selected_or_first_available_variant.featured_media -%}
+            {%- if product.selected_or_first_available_variant.media[4] != null -%}
+              {%- assign media = product.selected_or_first_available_variant.media[4] -%}
               <div class="product__media-item" data-media-id="{{ section.id }}-{{ media.id }}">
                 {% render 'product-thumbnail', media: media, position: 'featured', loop: section.settings.enable_video_looping, modal_id: section.id, xr_button: false, media_width: 0.5 %}
               </div>
             {%- endif -%}
             {%- liquid
-              assign media_to_render = product.featured_media.id
+              assign media_to_render = product.media[4].id
               for variant in product.variants
-                assign media_to_render = media_to_render | append: variant.featured_media.id | append: ' '
+                assign media_to_render = media_to_render | append: variant.media[4].id | append: ' '
               endfor
             -%}
             {%- for media in product.media -%}
-              {%- if media_to_render contains media.id and media.id != product.selected_or_first_available_variant.featured_media.id -%}
+              {%- if media_to_render contains media.id and media.id != product.selected_or_first_available_variant.media[4].id -%}
                 <div class="product__media-item" data-media-id="{{ section.id }}-{{ media.id }}">
                   {% render 'product-thumbnail', media: media, position: forloop.index, loop: section.settings.enable_video_looping, modal_id: section.id, xr_button: false, media_width: 0.5 %}
                 </div>
@@ -350,8 +350,8 @@
 
         <div class="product-media-modal__content color-background-1 gradient" role="document" aria-label="{{ 'products.modal.label' | t }}" tabindex="0">
           {%- liquid
-            if product.selected_or_first_available_variant.featured_media != null
-              assign media = product.selected_or_first_available_variant.featured_media
+            if product.selected_or_first_available_variant.media[4] != null
+              assign media = product.selected_or_first_available_variant.media[4]
               render 'product-media', media: media, loop: section.settings.enable_video_looping, variant_image: section.settings.hide_variants
             endif
           -%}
@@ -364,7 +364,7 @@
                 assign variant_image = false
               endif
 
-              unless media.id == product.selected_or_first_available_variant.featured_media.id
+              unless media.id == product.selected_or_first_available_variant.media[4].id
                 render 'product-media', media: media, loop: section.settings.enable_video_looping, variant_image: variant_image
               endunless
             -%}
@@ -384,10 +384,10 @@
 {%- endif -%}
 
 {%- liquid
-  if product.selected_or_first_available_variant.featured_media
-    assign seo_media = product.selected_or_first_available_variant.featured_media
+  if product.selected_or_first_available_variant.media[4]
+    assign seo_media = product.selected_or_first_available_variant.media[4]
   else
-    assign seo_media = product.featured_media
+    assign seo_media = product.media[4]
   endif
 -%}
 

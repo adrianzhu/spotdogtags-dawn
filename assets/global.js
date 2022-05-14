@@ -782,14 +782,14 @@ class VariantSelects extends HTMLElement {
 
   updateMedia() {
     if (!this.currentVariant) return;
-    if (!this.currentVariant.featured_media) return;
+    if (!this.currentVariant.media[4]) return;
 
     const mediaGallery = document.getElementById(`MediaGallery-${this.dataset.section}`);
-    mediaGallery.setActiveMedia(`${this.dataset.section}-${this.currentVariant.featured_media.id}`, true);
+    mediaGallery.setActiveMedia(`${this.dataset.section}-${this.currentVariant.media[4].id}`, true);
 
     const modalContent = document.querySelector(`#ProductModal-${this.dataset.section} .product-media-modal__content`);
     if (!modalContent) return;
-    const newMediaModal = modalContent.querySelector( `[data-media-id="${this.currentVariant.featured_media.id}"]`);
+    const newMediaModal = modalContent.querySelector( `[data-media-id="${this.currentVariant.media[4].id}"]`);
     modalContent.prepend(newMediaModal);
   }
 
