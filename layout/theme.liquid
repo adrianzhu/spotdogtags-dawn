@@ -29,6 +29,7 @@
 
     {% render 'meta-tags' %}
 
+    <script src="{{ 'jquery-3.6.0.slim.min.js' | asset_url }}" defer></script>
     <script src="{{ 'tag-customizer.js' | asset_url }}" defer="defer"></script>
     <script src="{{ 'global.js' | asset_url }}" defer="defer"></script>
     {{ content_for_header }}
@@ -195,7 +196,7 @@
     {% if request.page_type == 'product' %}
       {{ 'spot-dog-tags.css' | asset_url | stylesheet_tag }}
     {% endif%}
-    
+
     {%- unless settings.type_body_font.system? -%}
       <link rel="preload" as="font" href="{{ settings.type_body_font | font_url }}" type="font/woff2" crossorigin>
     {%- endunless -%}
