@@ -1,7 +1,7 @@
 {
     "sections": {
         "main": {
-            "type": "main-product",
+            "type": "product-custom_tag",
             "blocks": {
                 "vendor": {
                     "type": "text",
@@ -68,9 +68,20 @@
                 "hide_variants": false,
                 "enable_video_looping": false
             }
+        },
+        "product-recommendations": {
+            "type": "product-recommendations",
+            "settings": {
+                "heading": "You may also like",
+                "image_ratio": "adapt",
+                "show_secondary_image": false,
+                "show_vendor": false,
+                "show_rating": false
+            }
         }
     },
     "order": [
-        "main"
+        "main",
+        "product-recommendations"
     ]
 }
