@@ -49,12 +49,13 @@ function initTextPreviewListeners() {
       updateTextOverlay("#field-" + $(this).attr("id"), $(this).val());
       if (!text_preview_event_tracked) {
         var text_type = $('.product-single__title').text();
-        ga('send', {
-          hitType: 'event',
-          eventCategory: 'TextPreviewInput',
-          eventAction: 'input',
-          eventLabel: text_type
-        });
+        // TODO: update google analytics
+        // ga('send', {
+        //   hitType: 'event',
+        //   eventCategory: 'TextPreviewInput',
+        //   eventAction: 'input',
+        //   eventLabel: text_type
+        // });
         text_preview_event_tracked = true;
       }
     });
