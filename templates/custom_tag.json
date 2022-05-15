@@ -81,7 +81,6 @@
         }
     },
     "order": [
-        "main",
-        "product-recommendations"
+        "main"
     ]
 }
