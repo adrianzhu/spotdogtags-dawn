@@ -11,12 +11,14 @@
 {% if text_field_json_front %}
     {% for text_field in text_field_json_front %}
         {% if text_field["field-name"] %}
+            <div class="grid__item product-form__item">
             <input type="text"
-                   id="{{ text_field["field-id"] }}" 
-                   placeholder="{{ text_field["field-name"] }}"
-                   name="properties[{{ text_field["field-name"] }}]" 
-                   maxlength={% if text_field["field-id"] == "PetName" %}"12"{% else %}"15"{% endif %}
-                   class="tag-customizer-input">
+                    id="{{ text_field["field-id"] }}" 
+                   	placeholder="{{ text_field["field-name"] }}"
+                    name="properties[{{ text_field["field-name"] }}]" 
+                    maxlength={% if text_field["field-id"] == "PetName" %}"12"{% else %}"15"{% endif %}
+                    class="tag-customizer-input">
+            </div>
         {% endif %}
     {% endfor %}
 {% endif %}
@@ -24,12 +26,14 @@
 {% if text_field_json_back %}
     {% for text_field in text_field_json_back %}
         {% if text_field["field-name"] %}
+        <div class="grid__item product-form__item">
             <input type="text" 
-                   id="{{ text_field["field-id"] }}" 
-                   placeholder="{{ text_field["field-name"] }}"
-                   name="properties[{{ text_field["field-name"] }}]" 
-                   maxlength="15"
-                   class="tag-customizer-input">
+                id="{{ text_field["field-id"] }}" 
+                placeholder="{{ text_field["field-name"] }}"
+                name="properties[{{ text_field["field-name"] }}]" 
+                maxlength="15"
+                class="tag-customizer-input">
+        </div>
         {% endif %}
     {% endfor %}
 {% endif %}
