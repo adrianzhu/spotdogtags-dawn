@@ -1,7 +1,7 @@
 {
   "sections": {
     "main": {
-      "type": "custom-tag",
+      "type": "main-product",
       "blocks": {
         "vendor": {
           "type": "text",
