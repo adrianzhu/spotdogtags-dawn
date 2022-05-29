@@ -20,7 +20,7 @@
           <span class="product-preview-text" id="field-{{ text_field["field-id"] }}"></span>
         </div>
       {% endfor %}
-<!--       <img class="preview-img" src="{{ front_preview_img | img_url: product_image_size }}" alt="{{ front_preview_img.alt | escape }}"> -->
+      <img class="preview-img" src="{{ front_preview_img | img_url: product_image_size }}" alt="{{ front_preview_img.alt | escape }}">
     </div>
     <div class="image-preview-container">
       {% for text_field in text_field_json_back %}
@@ -36,6 +36,6 @@
           <span class="product-preview-text" id="field-{{ text_field["field-id"] }}"></span>
         </div>
       {% endfor %}
-<!--       <img class="preview-img" src="{{ back_preview_img | img_url: product_image_size }}" alt="{{ back_preview_img.alt | escape }}"> -->
+      <img class="preview-img" src="{{ back_preview_img | img_url: product_image_size }}" alt="{{ back_preview_img.alt | escape }}">
     </div>
 </div>
