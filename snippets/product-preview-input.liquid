@@ -2,6 +2,8 @@
 {% assign text_field_json_front = custom_fields["text_field_json_front"] | default: "{}" %}
 {% assign text_field_json_back = custom_fields["text_field_json_back"] | default: "{}" %}
 
+<div class="tag-customizer-form">
+
 <div>
   Customize your tag
 </div>
@@ -35,3 +37,5 @@
         {% endif %}
     {% endfor %}
 {% endif %}
+  
+</div>
