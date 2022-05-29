@@ -2,13 +2,17 @@
 {% assign text_field_json_front = custom_fields["text_field_json_front"] | default: "{}" %}
 {% assign text_field_json_back = custom_fields["text_field_json_back"] | default: "{}" %}
 
+<div>
+  Customize your tag
+</div>
+
 {% if text_field_json_front %}
     {% for text_field in text_field_json_front %}
         {% if text_field["field-name"] %}
             <div class="grid__item product-form__item">
-            <label for="{{ text_field["field-id"] }}">{{ text_field["field-name"] }}</label>
             <input type="text"
                     id="{{ text_field["field-id"] }}" 
+                   	placeholder="{{ text_field["field-name"] }}"
                     name="properties[{{ text_field["field-name"] }}]" 
                     maxlength={% if text_field["field-id"] == "PetName" %}"12"{% else %}"15"{% endif %}
                     class="product-form__input tag-customizer-input">
@@ -21,9 +25,9 @@
     {% for text_field in text_field_json_back %}
         {% if text_field["field-name"] %}
         <div class="grid__item product-form__item">
-            <label for="{{ text_field["field-id"] }}">{{ text_field["field-name"] }}</label>
             <input type="text" 
                 id="{{ text_field["field-id"] }}" 
+                placeholder="{{ text_field["field-name"] }}"
                 name="properties[{{ text_field["field-name"] }}]" 
                 maxlength="15"
                 class="product-form__input tag-customizer-input">
