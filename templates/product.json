@@ -23,11 +23,13 @@
         },
         "f761695c-690b-4f93-b1a1-418db9a69bb3": {
           "type": "quantity_selector",
+          "disabled": true,
           "settings": {
           }
         },
         "buy_buttons": {
           "type": "buy_buttons",
+          "disabled": true,
           "settings": {
             "show_dynamic_checkout": false
           }
