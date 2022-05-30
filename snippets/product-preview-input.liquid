@@ -61,7 +61,7 @@
                     >
                         <span>
                           {%- if product.selected_or_first_available_variant.available -%}
-                            {{ 'products.price | money_with_currency' | t }} - {{ 'products.product.add_to_cart' | t }}
+                            {{ products.price | money_with_currency }} - {{ 'products.product.add_to_cart' | t }}
                           {%- else -%}
                             {{ 'products.product.sold_out' | t }}
                           {%- endif -%}
