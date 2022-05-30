@@ -104,14 +104,17 @@
   display: grid;
   flex: 0 1 280px;
   justify-content: center;
+  grid-template-columns: auto auto;
   margin: 25px;
 }
 @media screen and (max-width: 99999px) {
   .product-preview-container {
-    grid-template-columns: auto auto;// repeat(auto-fill, 280px);
+    
   }
-  .preview-tag-header {
-    display:none;
+}
+@media screen and (max-width: 400px) {
+  .product-preview-container {
+    
   }
 }
 /*
